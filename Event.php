@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Yc\DddCore;
+namespace Yc\DddCore;
 
 abstract class Event
 {

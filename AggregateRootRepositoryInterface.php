@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Yc\DddCore;
+namespace Yc\DddCore;
 
 
 interface AggregateRootRepositoryInterface
@@ -16,5 +16,5 @@ interface AggregateRootRepositoryInterface
     /**
      * @param Event $event
      */
-    public function persistEvent(Event $event): void;
+    public function persistEvent(string $aggregateType, Event $event): void;
 }

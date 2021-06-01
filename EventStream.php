@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Yc\DddCore;
+namespace Yc\DddCore;
 
 class EventStream
 {
@@ -21,7 +21,7 @@ class EventStream
         $aggregateType = get_class($aggregateRoot);
 
         foreach ($events as $event) {
-            $this->repository->persistEvent($event);
+            $this->repository->persistEvent($aggregateType, $event);
         }
     }
 }
