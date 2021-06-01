@@ -1,0 +1,15 @@
+{
+    "name": "youniverse-center/ddd-core",
+    "description": "Core classes for simple DDD",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Grzegorz Balcewicz",
+            "email": "grzegorz@balcewicz.pl"
+        }
+    ],
+    "require": {
+        "php": ">= 8.*"
+    }
+}
