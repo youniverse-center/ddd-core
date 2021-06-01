@@ -11,5 +11,10 @@
     ],
     "require": {
         "php": "8.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Yc\\DddCore\\": ""
+        }
     }
 }
