@@ -7,7 +7,7 @@ abstract class AggregateRoot
     private int $version = 0;
     private array $recordedEvents = [];
 
-    private function __construct() {}
+    protected function __construct() {}
 
     protected static function reconstituteFromHistory(array $events): static
     {
