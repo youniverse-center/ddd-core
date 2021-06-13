@@ -11,6 +11,9 @@ class EventStream
     public function load($aggregateType, $aggregateId): ?AggregateRoot
     {
         $events = $this->repository->findEvents($aggregateType, $aggregateId);
+        if (empty($events)) {
+            return null;
+        }
 
         return AggregateRootDecorator::fromHistory($aggregateType, $events);
     }

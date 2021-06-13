@@ -22,15 +22,9 @@ abstract class AggregateRoot
         $reflectionClass = new \ReflectionClass($event);
         $methodName = 'when' . ucfirst($reflectionClass->getShortName());
 
-        if (!method_exists($this, $methodName)) {
-            throw new \RuntimeException(sprintf(
-                    'You must implement "%s" method to handle event "%s".',
-                    $methodName,
-                    $reflectionClass->getName())
-            );
+        if (method_exists($this, $methodName)) {
+            $this->$methodName($event);
         }
-
-        $this->$methodName($event);
     }
 
     protected function getVersion(): int
