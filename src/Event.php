@@ -4,7 +4,7 @@ namespace Yc\DddCore;
 
 abstract class Event
 {
-    private ?\DateTime $occuredAt = null;
+    private ?\DateTime $occurredAt = null;
 
     private function __construct(
         private string $aggregateId,
@@ -30,10 +30,10 @@ abstract class Event
         return $clone;
     }
 
-    public function withOccuredAt(\DateTime $occuredAt): static
+    public function withOccurredAt(\DateTime $occurredAt): static
     {
         $clone = clone $this;
-        $clone->occuredAt = $occuredAt;
+        $clone->occurredAt = $occurredAt;
 
         return $clone;
     }
@@ -48,9 +48,9 @@ abstract class Event
         return $this->version;
     }
 
-    public function getOccuredAt(): ?\DateTime
+    public function getOccurredAt(): ?\DateTime
     {
-        return $this->occuredAt;
+        return $this->occurredAt;
     }
 
     protected function get(string $name, $default = null)
