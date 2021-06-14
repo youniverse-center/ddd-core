@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Yc\\DddCore\\": ""
+            "Yc\\DddCore\\": "src/"
         }
     }
 }

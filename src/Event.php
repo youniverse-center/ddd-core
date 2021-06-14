@@ -4,6 +4,8 @@ namespace Yc\DddCore;
 
 abstract class Event
 {
+    private ?\DateTime $occuredAt = null;
+
     private function __construct(
         private string $aggregateId,
         private array $payload = [],
@@ -28,6 +30,14 @@ abstract class Event
         return $clone;
     }
 
+    public function withOccuredAt(\DateTime $occuredAt): static
+    {
+        $clone = clone $this;
+        $clone->occuredAt = $occuredAt;
+
+        return $clone;
+    }
+
     public function getPayload(): array
     {
         return $this->payload;
@@ -36,6 +46,11 @@ abstract class Event
     public function getVersion(): int
     {
         return $this->version;
+    }
+
+    public function getOccuredAt(): ?\DateTime
+    {
+        return $this->occuredAt;
     }
 
     protected function get(string $name, $default = null)

@@ -27,4 +27,24 @@ class EventStream
             $this->repository->persistEvent($aggregateType, $event);
         }
     }
+
+    /**
+     * @param \DateTime $dateTime
+     * @param int $maxEvents
+     * @return Event[]
+     */
+    public function findEventSince(\DateTime $dateTime, int $maxEvents): array
+    {
+        $this->repository->findEventsSince($dateTime, $maxEvents);
+    }
+
+    public function findLastEventDate(): \DateTime
+    {
+        return $this->repository->findLastEventDate();
+    }
+
+    public function countEventsSince(\DateTime $since = null): int
+    {
+        return $this->repository->countEventsSince($since);
+    }
 }
